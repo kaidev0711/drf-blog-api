@@ -28,11 +28,13 @@ INSTALLED_APPS = [
     "blog",
     "api",
     "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -113,7 +115,7 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.AllowAny",  # permission authentication
     ]
 }
-
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
